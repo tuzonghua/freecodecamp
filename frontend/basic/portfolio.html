@@ -12,6 +12,52 @@
     <style>
       /* Make sure nav doesn't overlay content */
       body, .anchor { padding-top: 70px; }
+
+      .h-nowrap {
+        white-space: nowrap;
+      }
+
+      /**
+        Nifty hover animation
+        Use: <a class="h-nowrap" data-label="Hover text" href="#">Hover text</a>
+      */
+      .body-container a {
+        display: inline-block;
+        position: relative;
+        color: #000;
+        text-decoration: none;
+        background-color: transparent;
+      }
+
+      .body-container a::before,
+      .body-container a::after {
+          -webkit-transition: width 0.5s;
+          -o-transition: width 0.5s;
+          transition: width 0.5s;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 0
+      }
+
+      .body-container a::before {
+        color: #fff;
+        content: attr(data-label);
+        overflow: hidden;
+        z-index: 2
+      }
+
+      .body-container a::after {
+        height: 100%;
+        background-color: #000;
+        content: "";
+        z-index: 1
+      }
+
+      .body-container a:hover::before,
+      .body-container a:hover::after {
+          width: 100%
+      }
     </style>
   </head>
 
