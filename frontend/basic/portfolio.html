@@ -14,10 +14,61 @@
 
     <style>
       /* Make sure nav doesn't overlay content */
-      body, .anchor { padding-top: 70px; }
+      /*body, .anchor { padding-top: 70px; }*/
+
+      html, body {
+        height: 100%;
+        width: 100%;
+      }
+
+      .text-vcenter {
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+      }
 
       .h-nowrap {
         white-space: nowrap;
+      }
+
+      .navbar {
+        padding: 20px 0;
+        -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        transition: background .5s ease-in-out,padding .5s ease-in-out;
+      }
+
+      .top-nav-collapse {
+        padding: 0;
+      }
+
+      .intro-section {
+          height: 100%;
+          padding-top: 150px;
+          text-align: center;
+          vertical-align: middle;
+          background: #fff;
+      }
+
+      .about-section {
+          height: 100%;
+          padding-top: 150px;
+          text-align: center;
+          background: #eee;
+      }
+
+      .portfolio-section {
+          height: 100%;
+          padding-top: 150px;
+          text-align: center;
+          background: #fff;
+      }
+
+      .contact-section {
+          height: 100%;
+          padding-top: 150px;
+          text-align: center;
+          background: #eee;
       }
 
       /**
@@ -64,26 +115,74 @@
     </style>
   </head>
 
-  <body>
-    <nav class="navbar navbar-default navbar-fixed-top">
+  <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#">Quaker Lens</a>
+        <div class="navbar-header page-scroll">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand page-scroll" href="#page-top">Quaker Lens</a>
         </div>
 
-        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a class="hidden" href="#page-top"></a></li>
+            <li><a class="page-scroll" href="#about">About</a></li>
+            <li><a class="page-scroll" href="#portfolio">Portfolio</a></li>
+            <li><a class="page-scroll" href="#contact">Contact</a></li>
           </ul>
         </div> <!-- .navbar-collapse -->
-      </div>
+      </div> <!-- .container-fluid -->
     </nav>
-    <div class="container-fluid">
 
-    </div> <!-- .container-fluid -->
+    <div id="intro" class="intro-section">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="text-vcenter">
+              <a class="btn btn-default page-scroll" href="#about">Click Me to Scroll Down!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>About Section</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Services Section</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Contact Section</h1>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
