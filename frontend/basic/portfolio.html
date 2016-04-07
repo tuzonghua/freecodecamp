@@ -39,17 +39,24 @@
 
       .intro-section {
           height: 100%;
-          padding-top: 150px;
           text-align: center;
           vertical-align: middle;
-          background: #fff;
+          background: #00334e;
+          margin: 0 auto;
+          text-transform: uppercase;
+          position: relative;
       }
 
-      .about-section {
-          height: 100%;
-          padding-top: 150px;
-          text-align: center;
-          background: #eee;
+      .intro-section p {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 75vw;
+        transform: translate(-50%,-50%);
+        color: #32779b;
+        font-weight: 700;
+        font-size: 5vmin;
+        line-height: 9vmin;
       }
 
       .portfolio-section {
@@ -63,23 +70,24 @@
           height: 100%;
           padding-top: 150px;
           text-align: center;
-          background: #eee;
+          background: #00334e;
       }
 
       /**
         Nifty hover animation
         Use: <a class="h-nowrap" data-label="Hover text" href="#">Hover text</a>
+        Inspiration: https://nerds.company
       */
-      .body-container a {
+      .intro-section a {
         display: inline-block;
         position: relative;
-        color: #000;
+        color: #fff;
         text-decoration: none;
         background-color: transparent;
       }
 
-      .body-container a::before,
-      .body-container a::after {
+      .intro-section a::before,
+      .intro-section a::after {
           -webkit-transition: width 0.5s;
           -o-transition: width 0.5s;
           transition: width 0.5s;
@@ -89,22 +97,22 @@
           width: 0
       }
 
-      .body-container a::before {
-        color: #fff;
+      .intro-section a::before {
+        color: #4CB2B4;
         content: attr(data-label);
         overflow: hidden;
         z-index: 2
       }
 
-      .body-container a::after {
+      .intro-section a::after {
         height: 100%;
-        background-color: #000;
+        background-color: #00334e;
         content: "";
         z-index: 1
       }
 
-      .body-container a:hover::before,
-      .body-container a:hover::after {
+      .intro-section a:hover::before,
+      .intro-section a:hover::after {
           width: 100%
       }
     </style>
@@ -134,6 +142,7 @@
       </div> <!-- .container-fluid -->
     </nav>
 
+    <!-- Intro Section -->
     <div id="intro" class="intro-section">
       <div class="container-fluid">
         <div class="row">
